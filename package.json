@@ -1,0 +1,20 @@
+{
+  "name": "stanleydefer_5_16032021",
+  "version": "1.0.0",
+  "description": "Projet5",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "serve": "cd backend && nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zlastaneur/StanleyDefer_5_16032021.git"
+  },
+  "author": "Stanley Defer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zlastaneur/StanleyDefer_5_16032021/issues"
+  },
+  "homepage": "https://github.com/Zlastaneur/StanleyDefer_5_16032021#readme"
+}
