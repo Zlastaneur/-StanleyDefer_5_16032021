@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
-    "serve": "cd backend && nodemon server.js"
+    "serve": "cd backend && node server.js"
   },
   "repository": {
     "type": "git",
