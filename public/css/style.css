@@ -24,4 +24,57 @@ a {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  height: 8em;
+  transition: all 200ms ease-in-out;
+  box-shadow: 0 4px 10px 0 #aaaaaa70;
+}
+header.scrolled {
+  height: 6em;
+  background-color: #fff !important;
+  transition: all 250ms ease-in-out;
+}
+header .container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 20px;
+}
+header .container .logo {
+  max-width: 180px;
+}
+header .container .shoppingCart {
+  width: 3em;
+}
+header .container a {
+  z-index: 2;
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    height: 6em;
+  }
+  header.scrolled {
+    height: 4.5em;
+    background-color: #fff !important;
+    transition: all 250ms ease-in-out;
+  }
+  header .container .logo {
+    max-width: 130px;
+  }
+  header .container .shoppingCart {
+    width: 2em;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

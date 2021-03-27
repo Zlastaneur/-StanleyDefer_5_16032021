@@ -1,0 +1,59 @@
+header{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    height: 8em;
+    transition: all 200ms ease-in-out;
+    @include shadow;
+
+    &.scrolled{
+        height: 6em;
+        background-color: #fff !important;
+        transition: all 250ms ease-in-out;
+    }
+
+    .container{
+        @include flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 0 20px;
+
+        .logo{
+            max-width: 180px;
+            
+        }
+
+        .shoppingCart{
+            width: 3em;
+        }
+
+        a{
+            z-index: 2;
+        }
+    }
+}
+
+@include for-phone{
+    header{
+        height: 6em;
+
+        &.scrolled{
+            height: 4.5em;
+            background-color: #fff !important;
+            transition: all 250ms ease-in-out;
+        }
+    
+        .container{
+
+            .logo{
+                max-width: 130px;
+            }
+            .shoppingCart{
+                width: 2em;
+            }
+        }
+    }
+}
