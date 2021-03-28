@@ -1,6 +1,7 @@
 .banner{
     position: relative;
     height: 600px;
+    overflow: hidden;
 
     img{
         width: 100%;
@@ -12,15 +13,15 @@
         position: absolute;
         top: 200px;
         right: 50px;
-        font-size: 3.5em;
+        font-size: 4.5em;
         font-weight: 500;
     }
 
     h2{
         position: absolute;
-        top: 290px;
+        top: 310px;
         right: 55px;
-        font-size: 2em;
+        font-size: 3em;
         font-weight: 500;
     }
 }
@@ -29,12 +30,12 @@
     .banner{
         h1{
             top: 375px;
-            font-size: 3em;
+            font-size: 3.5em;
         }
 
         h2{
-            top: 455px;
-            font-size: 1.8em;
+            top: 465px;
+            font-size: 2em;
         }
     }
 }

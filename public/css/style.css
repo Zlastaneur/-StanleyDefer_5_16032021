@@ -9,7 +9,6 @@ body {
 }
 
 * {
-  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -91,6 +90,7 @@ header .container a {
 .banner {
   position: relative;
   height: 600px;
+  overflow: hidden;
 }
 .banner img {
   width: 100%;
@@ -101,25 +101,25 @@ header .container a {
   position: absolute;
   top: 200px;
   right: 50px;
-  font-size: 3.5em;
+  font-size: 4.5em;
   font-weight: 500;
 }
 .banner h2 {
   position: absolute;
-  top: 290px;
+  top: 310px;
   right: 55px;
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 500;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1339px) {
   .banner h1 {
     top: 375px;
-    font-size: 3em;
+    font-size: 3.5em;
   }
   .banner h2 {
-    top: 455px;
-    font-size: 1.8em;
+    top: 465px;
+    font-size: 2em;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -165,7 +165,7 @@ header .container a {
   padding-top: 60px;
   flex-direction: column;
 }
-#productList .row {
+#productList .container {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
@@ -176,7 +176,7 @@ header .container a {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1339px) {
-  #productList .row {
+  #productList .container {
     justify-content: space-around;
   }
 }
@@ -187,7 +187,7 @@ header .container a {
     align-content: center;
     flex-direction: row;
   }
-  #productList .row {
+  #productList .container {
     max-width: 728px;
   }
   #productList .one {
@@ -235,9 +235,10 @@ header .container a {
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
   #productList {
-    padding: 10px;
+    width: 100%;
+    padding: 30px;
   }
-  #productList .row {
+  #productList .container {
     margin: 0;
     flex-flow: column nowrap;
   }
@@ -253,21 +254,37 @@ header .container a {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  height: 600px;
   background-color: white;
   margin: 10px;
+  max-height: 600px;
 }
-.card img {
-  max-width: 400px;
+.card .cardImage {
   max-height: 250px;
+  height: 100%;
   object-fit: cover;
 }
 .card .cardText {
-  padding: 10px;
+  height: 100%;
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
 }
-.card button {
-  font-size: 1em;
-  padding: 15px;
+.card .cardText h3 {
+  margin: 0 0 10px 0;
+  font-size: 2em;
+}
+.card .cardText p {
+  margin: 10px 0 5px 0;
+  font-size: 1.1em;
+}
+.card .cardText strong {
+  font-size: 1.5em;
+}
+.card .action {
+  display: flex;
+  margin: 10px 0;
 }
 
 .twoCard {
@@ -296,11 +313,20 @@ header .container a {
 @media screen and (min-width: 1024px) and (max-width: 1339px) {
   .card {
     max-width: 300px;
-    height: 500px;
+  }
+  .card .cardImage {
+    height: 100%;
+    max-height: 200px;
+  }
+  .card .cardText {
+    height: 100%;
+    max-height: 350px;
+  }
+  .card .cardText h3 {
+    font-size: 1.7em;
   }
 
   .twoCard {
-    height: 500px;
     max-width: 300px;
   }
   .twoCard .smallCard {
@@ -323,6 +349,27 @@ header .container a {
     height: 500px;
     margin-bottom: 30px;
     margin: 10px;
+  }
+  .card .cardImage {
+    max-height: 200px;
+    height: 100%;
+  }
+  .card .cardText {
+    padding: 10px;
+  }
+  .card .cardText h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+  }
+  .card .cardText p {
+    margin: 10px 0;
+    font-size: 1em;
+  }
+  .card .cardText strong {
+    font-size: 1.2em;
+  }
+  .card .action {
+    margin: 0;
   }
 
   .twoCard {
@@ -349,6 +396,29 @@ header .container a {
     height: 500px;
     margin: 0 0 20px 0;
   }
+  .card .cardImage {
+    max-height: 200px;
+  }
+  .card .cardText {
+    max-height: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  .card .cardText h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+  }
+  .card .cardText p {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1em;
+  }
+  .card .cardText strong {
+    font-size: 1.3em;
+  }
 
   .twoCard {
     height: 500px;
@@ -366,6 +436,43 @@ header .container a {
     max-width: 300px;
     max-height: 550px;
     object-fit: cover;
+  }
+}
+.button {
+  font-size: 1.3em;
+  font-weight: 400;
+  padding: 15px;
+  background-color: #cc7d48;
+  border: 0px;
+  cursor: pointer;
+  transition: ease-in-out 0.15s;
+}
+.button:hover {
+  transform: translateY(-0.2em);
+}
+
+.addCart {
+  padding: 15px 20px;
+  margin-left: 15px;
+}
+.addCart img {
+  position: relative;
+  top: 5px;
+  width: 30px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .button {
+    font-size: 1em;
+    font-weight: 400;
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .button {
+    font-size: 1em;
+    font-weight: 400;
+    padding: 10px;
   }
 }
 

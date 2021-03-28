@@ -1,0 +1,40 @@
+.button{
+    font-size: 1.3em; 
+    font-weight: 400;
+    padding: 15px;
+    background-color: rgb(204, 125, 72);
+    border: 0px;
+    cursor: pointer;
+    transition: ease-in-out 0.15s;
+
+    &:hover{
+        transform:translateY(-0.2em);
+    }
+}
+
+.addCart{
+    padding: 15px 20px;
+    margin-left: 15px;
+
+    img{
+        position: relative;
+        top: 5px;
+        width: 30px;
+    }
+}
+
+@include for-tablet{
+    .button{
+        font-size: 1em; 
+        font-weight: 400;
+        padding: 10px;
+    }
+}
+
+@include for-phone{
+    .button{
+        font-size: 1em; 
+        font-weight: 400;
+        padding: 10px;
+    }
+}
