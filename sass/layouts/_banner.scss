@@ -1,0 +1,80 @@
+.banner{
+    position: relative;
+    height: 600px;
+
+    img{
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    h1{
+        position: absolute;
+        top: 200px;
+        right: 50px;
+        font-size: 3.5em;
+        font-weight: 500;
+    }
+
+    h2{
+        position: absolute;
+        top: 290px;
+        right: 55px;
+        font-size: 2em;
+        font-weight: 500;
+    }
+}
+
+@include for-laptop{
+    .banner{
+        h1{
+            top: 375px;
+            font-size: 3em;
+        }
+
+        h2{
+            top: 455px;
+            font-size: 1.8em;
+        }
+    }
+}
+
+@include for-tablet{
+    .banner{
+        height: 400px;
+
+        h1{
+            top: 260px;
+            font-size: 2.5em;
+        }
+
+        h2{
+            top: 325px;
+            font-size: 1.4em;
+        }
+    }
+}
+
+@include for-phone{
+    .banner{
+        height: 200px;
+
+        img{
+            position: relative;
+            left: -80px;
+            width: 125%;
+        }
+
+        h1{
+            top: 118px;
+            right: 15px;
+            font-size: 1.4em;
+        }
+
+        h2{
+            top: 150px;
+            right: 15px;
+            font-size: 1em;
+        }
+    }
+}

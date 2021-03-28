@@ -3,16 +3,17 @@ header{
     align-items: center;
     position: fixed;
     top: 0;
+    max-width: 100%;
     width: 100%;
     z-index: 5;
     height: 8em;
-    transition: all 200ms ease-in-out;
+    transition: all 200ms ease-out;
     @include shadow;
+    background-color: #fff ;
 
     &.scrolled{
         height: 6em;
-        background-color: #fff !important;
-        transition: all 250ms ease-in-out;
+        transition: all 350ms ease-in-out;
     }
 
     .container{
@@ -42,7 +43,6 @@ header{
 
         &.scrolled{
             height: 4.5em;
-            background-color: #fff !important;
             transition: all 250ms ease-in-out;
         }
     

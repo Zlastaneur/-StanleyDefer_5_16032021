@@ -1,6 +1,7 @@
 body{
     padding: 0;
     margin: 0;
+    padding-top: 96px;
 }
 
 *,*:focus,*:hover{
@@ -8,6 +9,7 @@ body{
 }
 
 *{
+    overflow-x:hidden;
     box-sizing: border-box;
 }
 
@@ -18,4 +20,16 @@ li{
 a{
     text-decoration: none;
     color: black;
+}
+
+@include for-phone{
+    body{
+        padding-top: 72px;
+    }
+}
+
+@include for-tablet{
+    body{
+        padding-top: 96px;
+    }
 }

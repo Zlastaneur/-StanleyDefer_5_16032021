@@ -1,0 +1,129 @@
+.card{
+    @include shadow;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    height: 600px;
+    background-color: white;
+    margin: 10px;
+
+    img{
+        max-width: 400px;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .cardText{
+        padding: 10px;
+    }
+
+    button{
+       font-size: 1em; 
+       padding: 15px;
+    }
+}
+
+.twoCard{
+    max-width: 400px;
+    height: 600px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    .smallCard {
+        width: 100%;
+        height: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }  
+}
+
+.bigCard {
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+@include for-laptop{
+    .card{
+        max-width: 300px;
+        height: 500px;
+    }
+
+    .twoCard{
+        height: 500px;
+        max-width: 300px;
+        
+        .smallCard {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+        }  
+    }
+    
+    .bigCard {
+        width: 100%;
+        height: 100%;
+        max-width: 300px;
+        max-height: 550px;
+        object-fit: cover;
+    }
+}
+
+@include for-tablet{
+    .card{
+        max-width: 300px;
+        height: 500px;
+        margin-bottom: 30px;
+        margin: 10px;
+    }
+    
+    .twoCard{
+        height: 500px;
+        justify-content: space-between;
+
+        .smallCard {
+            width: 100%;
+            max-width: 300px;
+            height: 227px;
+            object-fit: cover;
+        }  
+    }
+
+    .bigCard {
+        margin: 10px;
+        width: 100%;
+        max-width: 300px;
+        height: 500px;
+    }  
+}
+
+@include for-phone{
+    .card{
+        width: 100%;
+        height: 500px;
+        margin: 0 0 20px 0;
+    }
+
+    .twoCard{
+        height: 500px;
+
+        .smallCard {
+            width: 100%;
+            max-width: 300px;
+            max-height: 200px;
+            object-fit: cover;
+        }  
+    }
+    
+    .bigCard {
+        width: 100%;
+        height: 100%;
+        max-width: 300px;
+        max-height: 550px;
+        object-fit: cover;
+    }
+}
