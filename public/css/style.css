@@ -87,6 +87,15 @@ header .container a {
     width: 2em;
   }
 }
+footer {
+  background-color: lightgray;
+}
+footer .copyright {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+}
+
 .banner {
   position: relative;
   height: 600px;
@@ -110,6 +119,13 @@ header .container a {
   right: 55px;
   font-size: 3em;
   font-weight: 500;
+}
+
+#productPage .banner {
+  height: 300px;
+}
+#productPage .banner h1, #productPage .banner h2 {
+  display: none;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1339px) {

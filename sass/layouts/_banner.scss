@@ -26,6 +26,16 @@
     }
 }
 
+#productPage{
+    .banner{
+        height: 300px;
+
+        h1,h2{
+            display: none;
+        }
+    }
+}
+
 @include for-laptop{
     .banner{
         h1{
