@@ -27,12 +27,12 @@
 }
 
 #productPage{
-    .banner{
-        height: 300px;
 
-        h1,h2{
-            display: none;
-        }
+    .banner{
+        height: 200px;
+            background-image: url(../../public/img/cameraRow.jpg);
+            background-size: cover;
+            background-position: bottom 500px right 0px;
     }
 }
 

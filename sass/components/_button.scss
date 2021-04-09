@@ -1,40 +1,54 @@
-.button{
-    font-size: 1.3em; 
+.button {
+    font-size: 1.3em;
     font-weight: 400;
     padding: 15px;
     background-color: rgb(204, 125, 72);
     border: 0px;
     cursor: pointer;
     transition: ease-in-out 0.15s;
+    display: flex;
+    align-items: center;
 
-    &:hover{
-        transform:translateY(-0.2em);
+    &:hover {
+        transform: translateY(-0.2em);
     }
 }
 
-.addCart{
+.addCart {
     padding: 15px 20px;
     margin-left: 15px;
 
-    img{
+    img {
+        margin: 0 10px;
         position: relative;
-        top: 5px;
         width: 30px;
     }
 }
 
-@include for-tablet{
-    .button{
-        font-size: 1em; 
+.quantity {
+    label {
+        margin-right: 5px;
+    }
+}
+
+@include for-tablet {
+    .button {
+        font-size: 1em;
         font-weight: 400;
         padding: 10px;
     }
 }
 
-@include for-phone{
-    .button{
-        font-size: 1em; 
+@include for-phone {
+    .button {
+        font-size: 1em;
         font-weight: 400;
         padding: 10px;
+    }
+
+    .addCart {
+        img {
+            margin: 0;
+        }
     }
 }

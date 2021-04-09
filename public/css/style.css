@@ -72,6 +72,11 @@ header .container a {
   z-index: 2;
 }
 
+#productPage header {
+  position: inherit;
+  box-shadow: none;
+}
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   header {
     height: 6em;
@@ -122,10 +127,10 @@ footer .copyright {
 }
 
 #productPage .banner {
-  height: 300px;
-}
-#productPage .banner h1, #productPage .banner h2 {
-  display: none;
+  height: 200px;
+  background-image: url(../../public/img/cameraRow.jpg);
+  background-size: cover;
+  background-position: bottom 500px right 0px;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1339px) {
@@ -189,6 +194,28 @@ footer .copyright {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
+}
+
+#productPage {
+  min-height: 100%;
+}
+#productPage #productList {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  flex-direction: column;
+}
+#productPage #productList .container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1339px) {
@@ -263,6 +290,35 @@ footer .copyright {
   }
   #productList .bigCard {
     display: none;
+  }
+}
+#productPage {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 0px;
+}
+#productPage #productDetail {
+  display: flex;
+  max-width: 1400px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 60px 0px;
+}
+#productPage #productDetail .horizontalCard {
+  margin: 0 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #productPage #productDetail .horizontalCard {
+    margin: 0 40px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  #productPage #productDetail .horizontalCard {
+    margin: 0px;
   }
 }
 .card {
@@ -454,6 +510,93 @@ footer .copyright {
     object-fit: cover;
   }
 }
+.horizontalCard {
+  display: flex;
+  flex-direction: row;
+}
+.horizontalCard .cardImage {
+  object-fit: cover;
+  max-width: 700px;
+  width: 100%;
+  margin-right: 40px;
+}
+.horizontalCard .cardText {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  font-size: 1.2em;
+}
+.horizontalCard .cardText h3 {
+  margin: 20px 0px;
+  font-size: 2.7em;
+}
+.horizontalCard .cardText .cameraLens {
+  font-size: 1.2em;
+  max-width: 100%;
+}
+.horizontalCard .cardText strong {
+  font-size: 1.8em;
+}
+.horizontalCard .cardText .addCart {
+  margin: 0 20px 0 0;
+  font-size: 1em;
+}
+.horizontalCard .cardText .action {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1339px) {
+  .horizontalCard .cardImage {
+    max-width: 400px;
+    width: 100%;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .horizontalCard {
+    flex-direction: column;
+  }
+  .horizontalCard .cardImage {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0px;
+  }
+  .horizontalCard .cardText {
+    text-align: center;
+  }
+  .horizontalCard .action {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .horizontalCard {
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .horizontalCard .cardImage {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0px;
+  }
+  .horizontalCard .cardText {
+    text-align: center;
+    padding: 0 20px;
+  }
+  .horizontalCard .cardText .action {
+    max-width: 100%;
+    justify-content: center;
+  }
+  .horizontalCard .cardText .addCart {
+    margin: 0 20px 0 0;
+    font-size: 1em;
+  }
+  .horizontalCard .cardText .addCart p {
+    display: none;
+  }
+}
 .button {
   font-size: 1.3em;
   font-weight: 400;
@@ -462,6 +605,8 @@ footer .copyright {
   border: 0px;
   cursor: pointer;
   transition: ease-in-out 0.15s;
+  display: flex;
+  align-items: center;
 }
 .button:hover {
   transform: translateY(-0.2em);
@@ -472,9 +617,13 @@ footer .copyright {
   margin-left: 15px;
 }
 .addCart img {
+  margin: 0 10px;
   position: relative;
-  top: 5px;
   width: 30px;
+}
+
+.quantity label {
+  margin-right: 5px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -489,6 +638,10 @@ footer .copyright {
     font-size: 1em;
     font-weight: 400;
     padding: 10px;
+  }
+
+  .addCart img {
+    margin: 0;
   }
 }
 

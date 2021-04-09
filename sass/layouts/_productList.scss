@@ -15,6 +15,27 @@
     }
 }
 
+#productPage{
+    min-height: 100%;
+    
+    #productList{
+        @include flex;
+        position: relative;
+        flex-direction: column;
+    
+        .container{
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            max-width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    }
+    
+}
+
 @include for-laptop{
     #productList{
     

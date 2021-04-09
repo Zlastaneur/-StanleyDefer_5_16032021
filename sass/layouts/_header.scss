@@ -37,6 +37,13 @@ header{
     }
 }
 
+#productPage {
+    header{
+        position: inherit;
+        box-shadow: none;
+    }
+}
+
 @include for-phone{
     header{
         height: 6em;

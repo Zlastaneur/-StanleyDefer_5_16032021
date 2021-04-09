@@ -1,10 +1,12 @@
+import "./product.js";
+
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     let images = [
         "../public/img/car.jpg",
         "../public/img/newYork.jpg",
         "../public/img/paris.jpg",
-        "../public/img/photographer.jpg"
+        "../public/img/photographer.jpg",
     ];
 
     window.addEventListener("scroll", () => {
@@ -45,10 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                 </div> `;
-            listProducts.innerHTML += `<img src=' ${images[index]} ' class='bigCard'></img>`; 
-            }
-            
-            else {
+                listProducts.innerHTML += `<img src=' ${images[index]} ' class='bigCard'></img>`;
+            } else {
                 listProducts.innerHTML += ` 
                 <div class="card">
                     <img class="cardImage" src="${product.imageUrl}" alt="${product.name}"/>
