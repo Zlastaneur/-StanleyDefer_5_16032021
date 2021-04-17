@@ -532,7 +532,7 @@ footer .copyright {
 }
 .horizontalCard .cardText .cameraLens {
   font-size: 1.2em;
-  max-width: 100%;
+  max-width: 200px;
 }
 .horizontalCard .cardText strong {
   font-size: 1.8em;
@@ -566,6 +566,7 @@ footer .copyright {
   }
   .horizontalCard .cardText {
     text-align: center;
+    align-items: center;
   }
   .horizontalCard .action {
     justify-content: center;
@@ -584,6 +585,7 @@ footer .copyright {
   .horizontalCard .cardText {
     text-align: center;
     padding: 0 20px;
+    align-items: center;
   }
   .horizontalCard .cardText .action {
     max-width: 100%;

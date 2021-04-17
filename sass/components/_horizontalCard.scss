@@ -22,7 +22,7 @@
 
         .cameraLens {
             font-size: 1.2em;
-            max-width: 100%;
+            max-width: 200px;
         }
 
         strong {
@@ -65,6 +65,7 @@
 
         .cardText {
             text-align: center;
+            align-items: center;
         }
 
         .action {
@@ -87,6 +88,7 @@
         .cardText {
             text-align: center;
             padding: 0 20px;
+            align-items: center;
 
             .action {
                 max-width: 100%;
