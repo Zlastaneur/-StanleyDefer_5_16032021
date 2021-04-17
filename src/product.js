@@ -1,18 +1,21 @@
-import { fetchAPI, price } from "./function.js";
+import { price } from "./function.js";
 
 if (document.getElementById("productPage")) {
     document.addEventListener("DOMContentLoaded", function () {
         const detailProduct = document.querySelector("#productDetail");
         const API_URL = `https://orinoco-backend-p5.herokuapp.com/api/cameras/${getURL()}`;
 
+        // Search for the id in URL
         function getURL() {
             return new URL(window.location.href).searchParams.get("id");
         }
 
+        // Fetch the right product
         fetch(API_URL)
             .then((res) => res.json())
             .then((data) => injectHtml(data));
 
+        // Add the html in the page
         function injectHtml(product) {
             detailProduct.innerHTML += ` 
                 <div class="horizontalCard">

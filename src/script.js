@@ -5,6 +5,7 @@ if (document.getElementById("homepage")) {
     document.addEventListener("DOMContentLoaded", function () {
         const header = document.querySelector("header");
 
+        // Array of images
         let images = [
             "../public/img/car.jpg",
             "../public/img/newYork.jpg",
@@ -12,6 +13,7 @@ if (document.getElementById("homepage")) {
             "../public/img/photographer.jpg",
         ];
 
+        // Header animation on scroll
         window.addEventListener("scroll", () => {
             if (window.scrollY > 0) {
                 header.classList.add("scrolled");
@@ -20,11 +22,13 @@ if (document.getElementById("homepage")) {
             }
         });
 
+        // Search for the API data
         fetch("https://orinoco-backend-p5.herokuapp.com/api/cameras")
             .then((res) => res.json())
             .then((data) => injectHtml(data))
             .catch((err) => console.error(err));
 
+        // Add the html in the page
         function injectHtml(data) {
             const listProducts = document.querySelector("#productList .container");
             data.forEach((product, index) => {
