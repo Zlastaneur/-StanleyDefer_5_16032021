@@ -1,23 +1,24 @@
 import { price } from "./function.js";
 
-if (document.getElementById("productPage")) {
-    document.addEventListener("DOMContentLoaded", function () {
-        const detailProduct = document.querySelector("#productDetail");
-        const API_URL = `https://orinoco-backend-p5.herokuapp.com/api/cameras/${getURL()}`;
+document.addEventListener("DOMContentLoaded", function () {
+    if (!document.getElementById("productPage")) return;
 
-        // Search for the id in URL
-        function getURL() {
-            return new URL(window.location.href).searchParams.get("id");
-        }
+    const detailProduct = document.querySelector("#productDetail");
+    const API_URL = `https://orinoco-backend-p5.herokuapp.com/api/cameras/${getID()}`;
 
-        // Fetch the right product
-        fetch(API_URL)
-            .then((res) => res.json())
-            .then((data) => injectHtml(data));
+    // Search for the id in URL
+    function getID() {
+        return new URL(window.location.href).searchParams.get("id");
+    }
 
-        // Add the html in the page
-        function injectHtml(product) {
-            detailProduct.innerHTML += ` 
+    // Fetch the right product
+    fetch(API_URL)
+        .then((res) => res.json())
+        .then((data) => injectHtml(data));
+
+    // Add the html in the page
+    function injectHtml(product) {
+        detailProduct.innerHTML += ` 
                 <div class="horizontalCard">
                     <img class="cardImage" src="${product.imageUrl}" alt="${product.name}" />
                     <div class="cardText">
@@ -39,6 +40,5 @@ if (document.getElementById("productPage")) {
                         </div>
                     </div>
                 </div>`;
-        }
-    });
-}
+    }
+});

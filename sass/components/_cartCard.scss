@@ -1,0 +1,47 @@
+.product {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    margin-bottom: 30px;
+    @include shadow;
+
+    img {
+        max-width: 250px;
+        width: 100%;
+    }
+
+    .description {
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+        width: 100%;
+        padding: 0 20px 20px 20px;
+        top: 5px;
+
+        h3 {
+            font-size: 1.5em;
+            width: 100%;
+        }
+
+        svg {
+            width: 24px;
+            height: auto;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .price {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 100%;
+
+            p {
+                margin: 0 10px;
+            }
+        }
+    }
+}
