@@ -1,34 +1,40 @@
-body{
+body {
     padding: 0;
     margin: 0;
     padding-top: 96px;
 }
 
-*,*:focus,*:hover{
-    outline:none;
+*,
+*:focus,
+*:hover {
+    outline: none;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-li{
+li {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-@include for-phone{
-    body{
+img {
+    object-fit: contain;
+}
+
+@include for-phone {
+    body {
         padding-top: 72px;
     }
 }
 
-@include for-tablet{
-    body{
+@include for-tablet {
+    body {
         padding-top: 96px;
     }
 }

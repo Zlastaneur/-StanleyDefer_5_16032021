@@ -3,7 +3,7 @@
     flex-flow: row nowrap;
     width: 100%;
     margin-bottom: 30px;
-    @include shadow;
+    @include shadowALT;
 
     img {
         max-width: 250px;
@@ -25,6 +25,7 @@
 
         svg {
             width: 24px;
+            object-fit: contain;
             height: auto;
             position: absolute;
             right: 10px;
@@ -41,6 +42,30 @@
 
             p {
                 margin: 0 10px;
+            }
+        }
+    }
+}
+
+@include for-phone {
+    .product {
+        flex-flow: column nowrap;
+
+        img {
+            max-width: 100%;
+        }
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        .description {
+            .price {
+                justify-content: flex-start;
+
+                p {
+                    margin: 0 10px 0 0;
+                }
             }
         }
     }

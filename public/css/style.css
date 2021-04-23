@@ -4,7 +4,9 @@ body {
   padding-top: 96px;
 }
 
-*, *:focus, *:hover {
+*,
+*:focus,
+*:hover {
   outline: none;
 }
 
@@ -19,6 +21,10 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+
+img {
+  object-fit: contain;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -324,7 +330,13 @@ footer .copyright {
 #cart {
   max-width: 800px;
   margin: auto;
-  padding: 50px 0;
+  padding: 50px 30px;
+}
+#cart .form {
+  margin: auto;
+  max-width: 600px;
+  margin-top: 20px;
+  box-shadow: 0 0 8px 4px #c4c4c470;
 }
 #cart .submit {
   padding-top: 30px;
@@ -661,7 +673,7 @@ footer .copyright {
   flex-flow: row nowrap;
   width: 100%;
   margin-bottom: 30px;
-  box-shadow: 0 4px 8px 0 #aaaaaa70;
+  box-shadow: 0 0 8px 4px #c4c4c470;
 }
 .product img {
   max-width: 250px;
@@ -681,6 +693,7 @@ footer .copyright {
 }
 .product .description svg {
   width: 24px;
+  object-fit: contain;
   height: auto;
   position: absolute;
   right: 10px;
@@ -698,9 +711,29 @@ footer .copyright {
   margin: 0 10px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .product {
+    flex-flow: column nowrap;
+  }
+  .product img {
+    max-width: 100%;
+  }
+  .product h3 {
+    margin-top: 10px;
+  }
+  .product .description .price {
+    justify-content: flex-start;
+  }
+  .product .description .price p {
+    margin: 0 10px 0 0;
+  }
+}
 .form {
   display: flex;
   flex-flow: row wrap;
+  padding: 20px;
+  background-color: linear gradient rgba(219, 219, 219, 0.788);
+  font-size: 0.8em;
 }
 .form .duoField {
   display: flex;
@@ -723,12 +756,25 @@ footer .copyright {
 .form .field input {
   width: 100%;
   height: 35px;
-  border: 1px solid #7c7c7c;
+  border-bottom: 1px solid #cc7d48 !important;
+  border: 0px solid #7c7c7c;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding-left: 40px;
 }
 .form .field label {
   position: absolute;
   top: 5px;
   left: 10px;
+}
+.form .field .fas {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+}
+.form .field .fas:active {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
