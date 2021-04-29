@@ -1,0 +1,8 @@
+.cartTotalValue {
+    @include shadow;
+    max-width: 150px;
+    width: 100%;
+    padding: 5px 10px 5px 20px;
+    margin-left: auto;
+    font-weight: 600;
+}

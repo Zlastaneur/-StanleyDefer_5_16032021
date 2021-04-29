@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="horizontalCard">
                     <img class="cardImage" src="${product.imageUrl}" alt="${product.name}" />
                     <div class="cardText">
-                        <h3>${product.name}</h3>
+                        <h3 class="cardName">${product.name}</h3>
                         <select name="cameraLens" class="cameraLens">
                             <option value="">${product.lenses[0]}</option>
                             <option value="">${product.lenses[1]}</option>
                         </select>
                         <p>${product.description}</p>
-                        <p><strong>${price(product.price)}</strong></p>
+                        <p><strong class="cardPrice">${price(product.price)}</strong></p>
                         <div class="action">
                             <button class="button addCart">
                                 <p>Ajouter au panier</p> <img src="../public/img/shopping-cart.svg" />

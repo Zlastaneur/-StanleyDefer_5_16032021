@@ -1,4 +1,5 @@
 import "./product.js";
+import "./cart.js";
 import { price } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -38,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="card">
                     <img class="cardImage" src="${product.imageUrl}" alt="${product.name}"/>
                     <div class="cardText">
-                        <h3>${product.name}</h3>
+                        <h3 class="cardName">${product.name}</h3>
                         <p>${product.description}</p>
-                        <p><strong>${price(product.price)}</strong></p>
+                        <p><strong class="cardPrice">${price(product.price)}</strong></p>
                         <div class="action">
                             <a href="product/?id=${product._id}"> 
                                 <button class="button seeMore">
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </button>
                             </a>
                             <button class="button addCart">
-                                <img src="./public/img/shopping-cart.svg" />
+                                <img src="./public/img/shopping-cart.svg"/>
                             </button>
                         </div>
                     </div>
