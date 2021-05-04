@@ -91,49 +91,9 @@
 
     <section id="cart" class="showContainer">
         <div class="cartList">
-            <div class="product">
-                <img class="productImage" src="../public/img/vcam_1.jpg" alt="">
-                <div class="description">
-                    <h3 class="productName">Zurss50S</h3>
-                    <i class="delete fas fa-trash-alt"></i>
-                    <div class="price">
-                        <p>Prix : <span class="productPrice">499€</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <img class="productImage" src="../public/img/vcam_2.jpg" alt="">
-                <div class="description">
-                    <h3 class="productName">Hirsch 400DTS</h3>
-                    <i class="delete fas fa-trash-alt"></i>
-                    <div class="price">
-                        <p>Prix : <span class="productPrice">3099€</span></p>
-                    </div>
-                </div>
-            </div>
-            <!-- Test -->
-            <div class="card">
-                <img class="cardImage" src="" alt="" />
-                <div class="cardText">
-                    <h3 class="cardName">${product.name}</h3>
-                    <p>${product.description}</p>
-                    <p><strong class="cardPrice">${price(product.price)}</strong></p>
-                    <div class="action">
-                        <a href="product/?id=${product._id}">
-                            <button class="button seeMore">
-                                Voir le produit
-                            </button>
-                        </a>
-                        <button class="button addCart">
-                            <img src="../public/img/shopping-cart.svg" />
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!------>
         </div>
-        <div class="cartTotalValue">
-            <p>Total : </p>
+        <div class="totalCart">
+            <p>Total : <span id="cartTotalValue"></span>€</p>
         </div>
         <div class="form">
             <div class="duoField">

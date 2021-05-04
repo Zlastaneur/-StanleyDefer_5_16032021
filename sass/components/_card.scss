@@ -1,4 +1,4 @@
-.card{
+.card {
     @include shadow;
     display: flex;
     flex-direction: column;
@@ -7,56 +7,60 @@
     margin: 10px;
     max-height: 600px;
 
-    .cardImage{
+    .cardImage {
         max-height: 250px;
         height: 100%;
         object-fit: cover;
     }
 
-    .cardText{
+    .cardText {
         height: 100%;
         max-height: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 20px;
-        
 
-        h3{
+        h3 {
             margin: 0 0 10px 0;
             font-size: 2em;
         }
 
-        p{
+        p {
             margin: 10px 0 5px 0;
             font-size: 1.1em;
         }
 
-        strong{
+        strong {
             font-size: 1.5em;
         }
     }
 
-    .action{
+    .action {
         display: flex;
         margin: 10px 0;
+
+        .seeMore,
+        .addCart {
+            height: 100%;
+        }
     }
 }
 
-.twoCard{
+.twoCard {
     max-width: 400px;
     height: 600px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
+
     .smallCard {
         width: 100%;
         height: 100%;
         max-height: 250px;
         object-fit: cover;
-    }  
+    }
 }
 
 .bigCard {
@@ -67,37 +71,41 @@
     object-fit: cover;
 }
 
-@include for-laptop{
-    .card{
+@include for-laptop {
+    .card {
         max-width: 300px;
-        
 
-        .cardImage{
+        .cardImage {
             height: 100%;
             max-height: 200px;
         }
-    
-        .cardText{
+
+        .cardText {
             height: 100%;
             max-height: 350px;
-            
-            h3{
+
+            h3 {
                 font-size: 1.7em;
             }
         }
 
+        .action {
+            button {
+                font-size: 1em;
+            }
+        }
     }
 
-    .twoCard{
+    .twoCard {
         max-width: 300px;
-        
+
         .smallCard {
             width: 100%;
             max-height: 200px;
             object-fit: cover;
-        }  
+        }
     }
-    
+
     .bigCard {
         width: 100%;
         height: 100%;
@@ -107,41 +115,41 @@
     }
 }
 
-@include for-tablet{
-    .card{
+@include for-tablet {
+    .card {
         max-width: 300px;
         height: 500px;
         margin-bottom: 30px;
         margin: 10px;
 
-        .cardImage{
+        .cardImage {
             max-height: 200px;
             height: 100%;
         }
-        .cardText{
+        .cardText {
             padding: 10px;
 
-            h3{
+            h3 {
                 margin: 0 0 10px 0;
                 font-size: 1.5em;
             }
 
-            p{
+            p {
                 margin: 10px 0;
                 font-size: 1em;
             }
 
-            strong{
+            strong {
                 font-size: 1.2em;
             }
         }
 
-        .action{
+        .action {
             margin: 0;
         }
     }
-    
-    .twoCard{
+
+    .twoCard {
         height: 500px;
         justify-content: space-between;
 
@@ -150,7 +158,7 @@
             max-width: 300px;
             height: 227px;
             object-fit: cover;
-        }  
+        }
     }
 
     .bigCard {
@@ -158,45 +166,45 @@
         width: 100%;
         max-width: 300px;
         height: 500px;
-    }  
+    }
 }
 
-@include for-phone{
-    .card{
+@include for-phone {
+    .card {
         width: 100%;
         height: 500px;
         margin: 0 0 20px 0;
 
-        .cardImage{
+        .cardImage {
             max-height: 200px;
         }
 
-        .cardText{
+        .cardText {
             max-height: 300px;
             height: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            
-            h3{
+
+            h3 {
                 margin: 0 0 10px 0;
                 font-size: 1.5em;
             }
 
-            p{
+            p {
                 text-align: center;
                 margin: 10px 0;
                 font-size: 1em;
             }
 
-            strong{
+            strong {
                 font-size: 1.3em;
             }
         }
     }
 
-    .twoCard{
+    .twoCard {
         height: 500px;
 
         .smallCard {
@@ -204,9 +212,9 @@
             max-width: 300px;
             max-height: 200px;
             object-fit: cover;
-        }  
+        }
     }
-    
+
     .bigCard {
         width: 100%;
         height: 100%;

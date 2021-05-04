@@ -1,4 +1,4 @@
-import { price } from "./function.js";
+import { price, purchaseProduct, getProductInfo, saveProductInStorage } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("productPage")) return;
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add the html in the page
     function injectHtml(product) {
         detailProduct.innerHTML += ` 
-                <div class="horizontalCard">
+                <div class="horizontalCard item">
                     <img class="cardImage" src="${product.imageUrl}" alt="${product.name}" />
                     <div class="cardText">
                         <h3 class="cardName">${product.name}</h3>

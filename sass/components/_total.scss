@@ -1,8 +1,9 @@
-.cartTotalValue {
+.totalCart {
     @include shadow;
     max-width: 150px;
     width: 100%;
-    padding: 5px 10px 5px 20px;
+    padding: 10px;
     margin-left: auto;
     font-weight: 600;
+    text-align: center;
 }

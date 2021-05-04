@@ -4,10 +4,12 @@
     width: 100%;
     margin-bottom: 30px;
     @include shadowALT;
+    min-height: 165px;
 
     img {
         max-width: 250px;
         width: 100%;
+        object-fit: cover;
     }
 
     .description {
