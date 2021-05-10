@@ -674,6 +674,7 @@ footer .copyright {
   margin: 0 10px;
   position: relative;
   width: 30px;
+  z-index: 0;
 }
 
 .quantity label {

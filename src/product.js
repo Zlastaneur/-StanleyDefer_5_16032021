@@ -1,10 +1,12 @@
-import { price, purchaseProduct, getProductInfo, saveProductInStorage } from "./function.js";
+import { price, updateCountInfo } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("productPage")) return;
 
     const detailProduct = document.querySelector("#productDetail");
     const API_URL = `https://orinoco-backend-p5.herokuapp.com/api/cameras/${getID()}`;
+
+    updateCountInfo();
 
     // Search for the id in URL
     function getID() {
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="horizontalCard item">
                     <img class="cardImage" src="${product.imageUrl}" alt="${product.name}" />
                     <div class="cardText">
-                        <h3 class="cardName">${product.name}</h3>
+                        <h3 class="cardName" id="${product._id}">${product.name}</h3>
                         <select name="cameraLens" class="cameraLens">
                             <option value="">${product.lenses[0]}</option>
                             <option value="">${product.lenses[1]}</option>

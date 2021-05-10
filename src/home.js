@@ -1,7 +1,9 @@
-import { price, purchaseProduct, getProductInfo, saveProductInStorage } from "./function.js";
+import { price, updateCountInfo } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("homepage")) return;
+
+    updateCountInfo();
 
     // Array of images
     let images = [
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="card item" id="${product._id}">
             <img class="cardImage" src="${product.imageUrl}" alt="${product.name}"/>
             <div class="cardText">
-                <h3 class="cardName">${product.name}</h3>
+                <h3 class="cardName" id="${product._id}">${product.name}</h3>
                 <p>${product.description}</p>
                 <p><strong class="cardPrice">${price(product.price)}</strong></p>
                 <div class="action">
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </button>
                     </a>
                     <button class="button addCart">
-                        <img class="ff" src="./public/img/shopping-cart.svg"/>
+                        <img src="./public/img/shopping-cart.svg"/>
                     </button>
                 </div>
             </div>

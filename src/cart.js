@@ -1,33 +1,25 @@
+import { getProductFromStorage, updateCountInfo } from "./function.js";
+
 document.addEventListener("DOMContentLoaded", function () {
+    if (!document.getElementById("cartPage")) return;
     console.log("Page chargée");
 
     /* ----- Variables and constants ----- */
     const cartList = document.querySelector(".cartList");
     const cartTotalValue = document.getElementById("cartTotalValue");
-    const cartCountInfo = document.getElementById("cartCount");
-    let cartItemID = 1;
+    //let cartItemID = 1;
+    let cart = [];
 
     /* ----- Event Listeners ----- */
-    updateCartInfo();
+    loadCart();
 
-    if (document.getElementById("cartPage")) {
-        loadCart();
-    }
-
-    if (document.getElementById("cartPage")) {
-        cartList.addEventListener("click", deleteProduct);
-    } else {
-        return;
-    }
+    cartList.addEventListener("click", deleteProduct);
 
     /* ----- Function ------- */
-    function updateCartInfo() {
-        let cartInfo = findCartInfo();
-        console.log(cartInfo);
-        cartCountInfo.textContent = cartInfo.productCount;
-        if (document.getElementById("cartPage")) {
-            cartTotalValue.textContent = cartInfo.total;
-        }
+    function updateTotalInfo() {
+        let cartInfo = findTotalInfo();
+        updateCountInfo();
+        cartTotalValue.textContent = cartInfo.total;
     }
 
     function addToCartList(product) {
@@ -40,29 +32,44 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <h3 class="productName">${product.name}</h3>
                                     <i class="delete fas fa-trash-alt"></i>
                                     <div class="price">
+                                        <p>Quantité : ${product.qty}</p>
                                         <p>Prix : <span class="productPrice">${product.price}</span></p>
                                     </div>
                                 </div>`;
         cartList.appendChild(cartItem);
     }
 
-    function getProductFromStorage() {
-        return localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [];
-    }
-
     function loadCart() {
         let products = getProductFromStorage();
-        if (products.length < 1) {
+        console.log(products);
+        /*if (products.length < 1) {
             cartItemID = 1;
         } else {
             cartItemID = products[products.length - 1].id;
             cartItemID++;
-        }
-        products.forEach((product) => addToCartList(product));
-        updateCartInfo();
+        }*/
+        /*let results = products.reduce(function (results, product) {
+            (results[product._id] = results[product._id] || []).push(product);
+            return results;
+        }, {});*/
+
+        products.reduce(function (res, value) {
+            if (!res[value._id]) {
+                res[value._id] = { _id: value._id, qty: 0, name: value.name, price: value.price, imgSrc: value.imgSrc };
+                cart.push(res[value._id]);
+            }
+            res[value._id].qty += value.qty;
+            return res;
+        }, {});
+
+        console.log(cart);
+        console.log(products);
+        cart.forEach((product) => addToCartList(product));
+        updateCountInfo();
+        updateTotalInfo();
     }
 
-    function findCartInfo() {
+    function findTotalInfo() {
         let products = getProductFromStorage();
         let total = products.reduce((acc, product) => {
             let price = parseFloat(product.price);
@@ -70,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 0);
         return {
             total: total.toFixed(2),
-            productCount: products.length,
         };
     }
 
@@ -87,7 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         localStorage.setItem("products", JSON.stringify(updatedProducts));
-        updateCartInfo();
+        updateCountInfo();
+        updateTotalInfo();
     }
 
     /*// Event Listener on add to cart button
