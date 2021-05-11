@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event Listener on add to cart button
     const observer = new MutationObserver(function () {
         const addProducts = document.querySelectorAll(".addCart");
-        console.log(addProducts);
         observer.disconnect();
 
         for (let i = 0; i < addProducts.length; i++) {

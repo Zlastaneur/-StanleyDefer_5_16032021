@@ -35,10 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             <button class="button addCart">
                                 <p>Ajouter au panier</p> <img src="../public/img/shopping-cart.svg" />
                             </button>
-                            <div class="quantity">
-                                <label for="quantity">Quantité</label>
-                                <input type="text" name="quantity">
-                            </div>
                         </div>
                     </div>
                 </div>`;
