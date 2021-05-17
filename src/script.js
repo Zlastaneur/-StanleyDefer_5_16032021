@@ -1,6 +1,7 @@
 import "./product.js";
 import "./cart.js";
 import "./home.js";
+import "./confirmation.js";
 import { purchaseProduct } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {

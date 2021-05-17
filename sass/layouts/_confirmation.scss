@@ -1,0 +1,63 @@
+#confirmationPage {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0px;
+
+    header {
+        position: inherit;
+    }
+
+    .orderConfirmation {
+        max-width: 800px;
+        margin: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        text-align: center;
+
+        .title {
+            font-size: 3.5em;
+            margin: 20px;
+        }
+
+        .message {
+            width: 100%;
+            font-size: 1.5em;
+            margin-top: 0px;
+        }
+    }
+}
+
+@include for-phone {
+    #confirmationPage {
+        .orderConfirmation {
+            padding: 0 20px;
+
+            .title {
+                font-size: 1.8em;
+            }
+
+            .message {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+@include for-tablet {
+    #confirmationPage {
+        .orderConfirmation {
+            padding: 0 20px;
+
+            .title {
+                font-size: 2.5em;
+            }
+
+            .message {
+                font-size: 1.3em;
+            }
+        }
+    }
+}
