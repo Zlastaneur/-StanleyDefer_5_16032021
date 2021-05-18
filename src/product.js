@@ -1,4 +1,4 @@
-import { price, updateCountInfo } from "./function.js";
+import { price, updateCountInfo, APIurl } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("productPage")) return;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Fetch the right product
-    fetch(API_URL)
+    fetch(`${APIurl}/${getID()}`)
         .then((res) => res.json())
         .then((data) => injectHtml(data));
 

@@ -5,4 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const orderId = new URL(location.href).searchParams.get("orderId") || "ERREUR";
         document.getElementById("orderID").textContent = orderId;
     })();
+
+    (() => {
+        const orderTotal = new URL(location.href).searchParams.get("orderTotal") || "ERREUR";
+        document.getElementById("orderTotal").textContent = orderTotal;
+    })();
 });

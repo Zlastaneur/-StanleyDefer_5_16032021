@@ -1,4 +1,4 @@
-import { getProductFromStorage, updateCountInfo } from "./function.js";
+import { getProductFromStorage, updateCountInfo, APIurl } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("cartPage")) return;
@@ -157,10 +157,8 @@ function sendOrder() {
         return;
     }
     //const items = [];
-    //const IDs = [];
-    const items = getProductFromStorage();
 
-    console.log(items);
+    //console.log(items);
 
     /*const productIDs = products.filter((product) => {
         return product.id;
@@ -177,11 +175,12 @@ function sendOrder() {
         return res;
     }, {});*/
 
-    const products = items.filter((product) => {
+    /*const products = items.filter((product) => {
         return product.id;
-    });
+    });*/
 
-    console.log(items);
+    //console.log(products);
+    const items = getProductFromStorage();
 
     const order = {
         contact: {
@@ -191,8 +190,10 @@ function sendOrder() {
             city: city,
             email: email,
         },
-        products: products,
+        products: [],
     };
+
+    items.forEach((item) => order.products.push(item.id));
 
     console.log(order);
 
@@ -201,14 +202,15 @@ function sendOrder() {
     const postOptions = {
         method: "POST",
         body: JSON.stringify(order),
-        headers: { "Content-Type": "application/json; charset=utf-8" },
+        headers: { "Content-Type": "application/json" },
     };
 
-    fetch("https://orinoco-backend-p5.herokuapp.com/api/cameras/order", postOptions)
+    fetch(`${APIurl}/order`, postOptions)
         .then((response) => response.json())
         .then((json) => {
+            console.log(json);
             localStorage.removeItem("products");
-            // window.location.href = `/confirmation/index.html?orderId=${json.orderId}`;
+            window.location.href = `/confirmation/?orderId=${json.orderId}&orderTotal=${cartTotalValue.textContent}`;
         })
         .catch(() => {
             alert(error);

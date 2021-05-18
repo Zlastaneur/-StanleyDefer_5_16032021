@@ -1,5 +1,7 @@
 const cartCountInfo = document.getElementById("cartCount");
 
+export const APIurl = "https://orinoco-backend-p5.herokuapp.com/api/cameras"
+
 // Converts price
 export function price(price) {
     return `${price / 100}€`;

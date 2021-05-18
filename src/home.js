@@ -1,4 +1,4 @@
-import { price, updateCountInfo } from "./function.js";
+import { price, updateCountInfo, APIurl } from "./function.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("homepage")) return;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     // Search for the API data
-    fetch("https://orinoco-backend-p5.herokuapp.com/api/cameras")
+    fetch(`${APIurl}`)
         .then((res) => res.json())
         .then((data) => injectHtml(data))
         .catch((err) => console.error(err));
