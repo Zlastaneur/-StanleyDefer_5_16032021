@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Start observing
     observer.observe(document.body, {
-        //document.body is node target to observe
-        childList: true, //This is a must have for the observer with subtree
-        subtree: true, //Set to true if changes must also be observed in descendants.
+        childList: true,
+        subtree: true,
     });
 });

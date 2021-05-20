@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartList = document.querySelector(".cartList");
     const cartTotalValue = document.getElementById("cartTotalValue");
     const form = document.getElementById("form");
-
     const observer = new MutationObserver(function () {
         const deleteButtons = document.querySelectorAll(".fa-trash-alt");
         observer.disconnect();
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         subtree: true,
     });
 
-    //submitButton.addEventListener("click", sendOrder);
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         sendOrder();
@@ -99,6 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
         updateTotalInfo();
     }
 
+    /* ------- Form ------- */
+
     verifyValidity(document.getElementById("firstname"), (e) => e.target.value.length > 1);
     verifyValidity(document.getElementById("lastname"), (e) => e.target.value.length > 1);
     verifyValidity(document.getElementById("email"), (e) => {
@@ -174,8 +174,6 @@ function sendOrder() {
 
     items.forEach((item) => order.products.push(item.id));
 
-    console.log(order);
-
     const postOptions = {
         method: "POST",
         body: JSON.stringify(order),
@@ -185,7 +183,6 @@ function sendOrder() {
     fetch(`${APIurl}/order`, postOptions)
         .then((response) => response.json())
         .then((json) => {
-            console.log(json);
             const orderTotal = cartTotalValue.textContent;
             const orderId = json.orderId;
             document.querySelector("input[name = 'orderTotal']").value = orderTotal;

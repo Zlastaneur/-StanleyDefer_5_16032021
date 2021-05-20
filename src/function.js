@@ -1,6 +1,4 @@
-const cartCountInfo = document.getElementById("cartCount");
-
-export const APIurl = "https://orinoco-backend-p5.herokuapp.com/api/cameras"
+export const APIurl = "https://orinoco-backend-p5.herokuapp.com/api/cameras";
 
 // Converts price
 export function price(price) {
@@ -38,6 +36,7 @@ export function getProductFromStorage() {
 }
 
 export function updateCountInfo() {
+    const cartCountInfo = document.getElementById("cartCount");
     const countInfo = findCountInfo();
     cartCountInfo.textContent = countInfo.productCount;
 }
