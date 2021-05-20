@@ -21,8 +21,12 @@
         }
 
         .cameraLens {
+            box-shadow: 0 0 10px 2px rgb(197, 197, 197);
+            background-color: transparent;
+            border: none;
             font-size: 1.2em;
             max-width: 200px;
+            color: $primary-color;
         }
 
         strong {

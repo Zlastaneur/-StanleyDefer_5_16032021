@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cart = [];
     const cartList = document.querySelector(".cartList");
     const cartTotalValue = document.getElementById("cartTotalValue");
-    const submitButton = document.getElementsByClassName("submit");
+    const form = document.getElementById("form");
 
     const observer = new MutationObserver(function () {
         const deleteButtons = document.querySelectorAll(".fa-trash-alt");
@@ -21,9 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
         subtree: true,
     });
 
-    for (let i = 0; i < submitButton.length; i++) {
-        submitButton[i].addEventListener("click", sendOrder);
-    }
+    //submitButton.addEventListener("click", sendOrder);
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        sendOrder();
+    });
 
     /* ---------- */
     loadCart();
@@ -156,30 +158,7 @@ function sendOrder() {
         alert("Champs incorrects, merci de remplir correctement le formulaire");
         return;
     }
-    //const items = [];
 
-    //console.log(items);
-
-    /*const productIDs = products.filter((product) => {
-        return product.id;
-    });*/
-
-    /* products.filter((product) => IDs.includes(product.id));
-    console.log(IDs);*/
-
-    /* products.filter(function (res, value) {
-        if (!res[value.id]) {
-            res[value.id] = { id: value.id };
-            items.push(res[value.id]);
-        }
-        return res;
-    }, {});*/
-
-    /*const products = items.filter((product) => {
-        return product.id;
-    });*/
-
-    //console.log(products);
     const items = getProductFromStorage();
 
     const order = {
@@ -197,8 +176,6 @@ function sendOrder() {
 
     console.log(order);
 
-    //localStorage.setItem("contact", JSON.stringify(contact));
-
     const postOptions = {
         method: "POST",
         body: JSON.stringify(order),
@@ -209,8 +186,13 @@ function sendOrder() {
         .then((response) => response.json())
         .then((json) => {
             console.log(json);
+            const orderTotal = cartTotalValue.textContent;
+            const orderId = json.orderId;
+            document.querySelector("input[name = 'orderTotal']").value = orderTotal;
+            document.querySelector("input[name = 'orderId']").value = orderId;
             localStorage.removeItem("products");
-            window.location.href = `/confirmation/?orderId=${json.orderId}&orderTotal=${cartTotalValue.textContent}`;
+            //window.location.href = `./../confirmation/index.html?orderId=${json.orderId}&orderTotal=${cartTotalValue.textContent}`;
+            form.submit();
         })
         .catch(() => {
             alert(error);
