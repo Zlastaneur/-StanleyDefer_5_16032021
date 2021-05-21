@@ -46,9 +46,6 @@
             p {
                 margin: 0 10px;
             }
-
-            .quantity {
-            }
         }
     }
 }
@@ -61,19 +58,25 @@
             max-width: 100%;
         }
 
-        h3 {
-            margin-top: 10px;
-        }
-
         .description {
+            padding: 10px 20px 20px 20px;
+
             .priceQty {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
                 p {
-                    margin: 0 10px 0 0;
+                    margin: 0;
                 }
+            }
+
+            .quantity {
+                margin-bottom: 10px !important;
+            }
+            h3 {
+                margin-top: 5px;
+                margin-bottom: 10px;
             }
         }
     }

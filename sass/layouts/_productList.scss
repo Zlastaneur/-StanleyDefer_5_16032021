@@ -1,10 +1,14 @@
-#productList{
+#homepage {
+    @include pushToButtom;
+}
+
+#productList {
     @include flex;
     position: relative;
     padding-top: 60px;
     flex-direction: column;
 
-    .container{
+    .container {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
@@ -15,15 +19,15 @@
     }
 }
 
-#productPage{
+#productPage {
     min-height: 100%;
-    
-    #productList{
+
+    #productList {
         @include flex;
         position: relative;
         flex-direction: column;
-    
-        .container{
+
+        .container {
             display: flex;
             flex-flow: row wrap;
             width: 100%;
@@ -33,100 +37,97 @@
             margin-bottom: 30px;
         }
     }
-    
 }
 
-@include for-laptop{
-    #productList{
-    
-        .container{
+@include for-laptop {
+    #productList {
+        .container {
             justify-content: space-around;
         }
     }
 }
 
-@include for-tablet{
-    #productList{
+@include for-tablet {
+    #productList {
         padding: 60px 20px 0 20px;
         justify-content: center;
         align-content: center;
         flex-direction: row;
-        
-        .container{
+
+        .container {
             max-width: 728px;
         }
 
-        .one{
+        .one {
             order: 1;
         }
 
-        .two{
+        .two {
             order: 2;
         }
 
-        .three{
+        .three {
             order: 4;
         }
 
-        .four{
+        .four {
             order: 3;
         }
 
-        .five{
+        .five {
             order: 5;
         }
 
-        .six{
+        .six {
             order: 6;
         }
 
-        .seven{
+        .seven {
             order: 8;
         }
 
-        .eight{
+        .eight {
             order: 9;
             width: 728px;
             flex-direction: row;
             height: 500px;
             justify-content: space-between;
             height: auto;
-    
+
             .smallCard {
                 width: 100%;
                 max-width: 300px;
                 height: 227px;
                 object-fit: cover;
             }
-
         }
 
-        .twoCard{
+        .twoCard {
             margin: 10px;
             max-width: 728px;
         }
 
-        .nine{
+        .nine {
             order: 7;
         }
     }
 }
 
-@include for-phone{
-    #productList{
+@include for-phone {
+    #productList {
         width: 100%;
         padding: 30px;
 
-        .container{
+        .container {
             margin: 0;
-            flex-flow: column nowrap;     
+            flex-flow: column nowrap;
         }
 
-        .twoCard{
+        .twoCard {
             display: none;
         }
 
-        .bigCard{
+        .bigCard {
             display: none;
         }
     }

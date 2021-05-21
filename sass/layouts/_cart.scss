@@ -1,9 +1,7 @@
 #cartPage {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
+    @include pushToButtom;
 }
+
 #cart {
     max-width: 800px;
     margin: auto;

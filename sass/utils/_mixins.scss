@@ -37,3 +37,10 @@
 @mixin shadowALT {
     box-shadow: 0 0 8px 4px #c4c4c470;
 }
+
+@mixin pushToButtom {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}

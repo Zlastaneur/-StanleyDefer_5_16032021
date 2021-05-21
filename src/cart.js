@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <i class="delete fas fa-trash-alt"></i>
                                     <div class="priceQty">
                                         <p class="quantity"><button class="button quantityBtn minus">-</button>Quantité :<span id="quantityNbr">${product.qty}</span><button class="button quantityBtn plus">+</button></p>
-                                        <p>Prix : <span class="productPrice">${product.price}</span></p>
+                                        <p>Prix à l'unité : <span class="productPrice">${product.price}</span></p>
                                     </div>
                                 </div>`;
         cartList.appendChild(cartItem);
