@@ -18,9 +18,7 @@ export function getProductInfo(product) {
         name: product.querySelector(".cardName").textContent,
         price: product.querySelector(".cardPrice").textContent,
     };
-    if (document.getElementById("cartPage")) {
-        addToCartList(productInfo);
-    }
+
     saveProductInStorage(productInfo);
 }
 

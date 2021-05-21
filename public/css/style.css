@@ -745,8 +745,25 @@ footer .copyright {
   z-index: 0;
 }
 
-.quantity label {
-  margin-right: 5px;
+.quantity {
+  display: flex;
+  width: 180px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.quantityBtn {
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  border-radius: 5px;
+}
+
+.productPrice,
+#quantityNbr {
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -785,10 +802,11 @@ footer .copyright {
   flex-flow: row wrap;
   position: relative;
   width: 100%;
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 10px 20px;
   top: 5px;
 }
 .product .description h3 {
+  margin-top: 15px;
   font-size: 1.5em;
   width: 100%;
 }
@@ -800,17 +818,16 @@ footer .copyright {
   top: 10px;
   cursor: pointer;
 }
-.product .description .price {
+.product .description .priceQty {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
 }
-.product .description .price p {
+.product .description .priceQty p {
   margin: 0 10px;
 }
-
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .product {
     flex-flow: column nowrap;
@@ -821,10 +838,12 @@ footer .copyright {
   .product h3 {
     margin-top: 10px;
   }
-  .product .description .price {
-    justify-content: flex-start;
+  .product .description .priceQty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .product .description .price p {
+  .product .description .priceQty p {
     margin: 0 10px 0 0;
   }
 }
