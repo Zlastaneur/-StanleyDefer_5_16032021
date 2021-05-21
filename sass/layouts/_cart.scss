@@ -1,3 +1,9 @@
+#cartPage {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
 #cart {
     max-width: 800px;
     margin: auto;
@@ -11,5 +17,21 @@
     #submit {
         padding-top: 30px;
         margin: auto;
+    }
+}
+
+#emptyCart {
+    max-width: 600px;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-flow: column;
+    margin: auto;
+
+    .title {
+        width: 100%;
+        margin-top: 0px;
+        margin: 0 0 30px 0;
     }
 }
