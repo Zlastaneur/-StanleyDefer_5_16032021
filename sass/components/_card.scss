@@ -38,12 +38,9 @@
 
     .action {
         display: flex;
+        justify-content: flex-start;
         margin: 10px 0;
-
-        .seeMore,
-        .addCart {
-            height: 100%;
-        }
+        width: 100%;
     }
 }
 
@@ -192,6 +189,10 @@
 
             strong {
                 font-size: 1.3em;
+            }
+
+            .action {
+                justify-content: center;
             }
         }
     }

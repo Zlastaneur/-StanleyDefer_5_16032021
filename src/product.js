@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add the html in the page
     function injectHtml(product) {
         const detailProduct = document.querySelector("#productDetail");
-
         detailProduct.innerHTML += ` 
                 <div class="horizontalCard item">
                     <img class="cardImage" src="${product.imageUrl}" alt="${product.name}" />
@@ -31,7 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <p><strong class="cardPrice">${price(product.price)}</strong></p>
                         <div class="action">
                             <button class="button addCart">
-                                <p>Ajouter au panier</p> <img src="../public/img/shopping-cart.svg" />
+                                <span class="addToCart">Ajouter au panier</span>
+                                <img class="shoppingCart" src="../public/img/shopping-cart.svg" />
+                                <span class="addedToCart">Produit ajouté</span>
+                                <img class="faShoppingCart" src="../public/img/shopping-cart.svg" />
+                                <i class="fas fa-camera"></i>
                             </button>
                         </div>
                     </div>

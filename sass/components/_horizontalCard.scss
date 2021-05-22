@@ -26,7 +26,6 @@
             border: none;
             font-size: 1.2em;
             max-width: 200px;
-            color: $primary-color;
         }
 
         strong {
@@ -34,7 +33,7 @@
         }
 
         .addCart {
-            margin: 0 20px 0 0;
+            margin: 0;
             font-size: 1em;
         }
 
@@ -42,7 +41,7 @@
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
-            max-width: 100%;
+            width: 100%;
         }
     }
 }
@@ -70,10 +69,9 @@
         .cardText {
             text-align: center;
             align-items: center;
-        }
-
-        .action {
-            justify-content: center;
+            .action {
+                justify-content: center;
+            }
         }
     }
 }
@@ -95,12 +93,12 @@
             align-items: center;
 
             .action {
-                max-width: 100%;
+                width: 100%;
+                justify-content: center;
             }
 
             .addCart {
                 margin: 0px;
-                font-size: 1em;
             }
         }
     }

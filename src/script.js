@@ -20,8 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const observer = new MutationObserver(function () {
         const addProducts = document.querySelectorAll(".addCart");
 
-        for (let i = 0; i < addProducts.length; i++) {
-            addProducts[i].addEventListener("click", purchaseProduct);
+        addProducts.forEach((button) => {
+            button.addEventListener("click", purchaseProduct);
+            button.addEventListener("click", cartClick);
+        });
+
+        function cartClick() {
+            let button = this;
+            console.log(button);
+            this.classList.add("clicked");
+
+            setTimeout(() => {
+                this.classList.remove("clicked");
+            }, 2500);
         }
     });
 

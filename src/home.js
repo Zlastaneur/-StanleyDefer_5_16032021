@@ -43,11 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="action">
                     <a href="product/?id=${product._id}"> 
                         <button class="button seeMore">
-                                Voir le produit
+                            Voir plus
                         </button>
                     </a>
                     <button class="button addCart">
-                        <img src="./public/img/shopping-cart.svg"/>
+                        <span class="addToCart">Ajouter au panier</span>
+                        <img class="shoppingCart" src="./public/img/shopping-cart.svg" />
+                        <span class="addedToCart">Produit ajouté</span>
+                        <img class="faShoppingCart" src="./public/img/shopping-cart.svg" />
+                        <i class="fas fa-camera"></i>
                     </button>
                 </div>
             </div>

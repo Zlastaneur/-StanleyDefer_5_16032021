@@ -1,5 +1,5 @@
 .button {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 400;
     padding: 15px;
     background-color: $primary-color;
@@ -15,16 +15,9 @@
     }
 }
 
-.addCart {
-    padding: 15px 20px;
-    margin-left: 15px;
-
-    img {
-        margin: 0 10px;
-        position: relative;
-        width: 30px;
-        z-index: 0;
-    }
+.seeMore {
+    height: 100%;
+    flex-flow: row nowrap;
 }
 
 .quantity {
@@ -61,11 +54,5 @@
         font-size: 1em;
         font-weight: 400;
         padding: 10px;
-    }
-
-    .addCart {
-        img {
-            margin: 0;
-        }
     }
 }

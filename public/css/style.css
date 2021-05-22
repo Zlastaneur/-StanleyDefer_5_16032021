@@ -345,7 +345,7 @@ footer .copyright {
   padding: 60px 0px;
 }
 #productPage #productDetail .horizontalCard {
-  margin: 0 20px;
+  margin: 0 40px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -482,11 +482,9 @@ footer .copyright {
 }
 .card .action {
   display: flex;
+  justify-content: flex-start;
   margin: 10px 0;
-}
-.card .action .seeMore,
-.card .action .addCart {
-  height: 100%;
+  width: 100%;
 }
 
 .twoCard {
@@ -617,6 +615,9 @@ footer .copyright {
   .card .cardText strong {
     font-size: 1.3em;
   }
+  .card .cardText .action {
+    justify-content: center;
+  }
 
   .twoCard {
     height: 500px;
@@ -662,20 +663,19 @@ footer .copyright {
   border: none;
   font-size: 1.2em;
   max-width: 200px;
-  color: #cc7d48;
 }
 .horizontalCard .cardText strong {
   font-size: 1.8em;
 }
 .horizontalCard .cardText .addCart {
-  margin: 0 20px 0 0;
+  margin: 0;
   font-size: 1em;
 }
 .horizontalCard .cardText .action {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  max-width: 100%;
+  width: 100%;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1339px) {
@@ -698,7 +698,7 @@ footer .copyright {
     text-align: center;
     align-items: center;
   }
-  .horizontalCard .action {
+  .horizontalCard .cardText .action {
     justify-content: center;
   }
 }
@@ -718,15 +718,15 @@ footer .copyright {
     align-items: center;
   }
   .horizontalCard .cardText .action {
-    max-width: 100%;
+    width: 100%;
+    justify-content: center;
   }
   .horizontalCard .cardText .addCart {
     margin: 0px;
-    font-size: 1em;
   }
 }
 .button {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 400;
   padding: 15px;
   background-color: #cc7d48;
@@ -741,15 +741,9 @@ footer .copyright {
   transform: translateY(-0.2em);
 }
 
-.addCart {
-  padding: 15px 20px;
-  margin-left: 15px;
-}
-.addCart img {
-  margin: 0 10px;
-  position: relative;
-  width: 30px;
-  z-index: 0;
+.seeMore {
+  height: 100%;
+  flex-flow: row nowrap;
 }
 
 .quantity {
@@ -785,10 +779,6 @@ footer .copyright {
     font-size: 1em;
     font-weight: 400;
     padding: 10px;
-  }
-
-  .addCart img {
-    margin: 0;
   }
 }
 .product {
@@ -959,6 +949,145 @@ footer .copyright {
   50%, 100% {
     top: 24px;
     height: 32px;
+  }
+}
+.addCart {
+  position: relative;
+  max-width: 220px;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  padding: 15px 20px;
+  margin-left: 15px;
+  background-color: #cc7d48;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+.addCart img {
+  width: 25px;
+}
+.addCart:active {
+  transform: scale(0.9);
+}
+.addCart .faShoppingCart {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: -15%;
+  font-size: 2em;
+  transform: translate(-50%, -50%);
+}
+.addCart .fa-camera {
+  position: absolute;
+  z-index: 3;
+  top: -20%;
+  left: 60%;
+  font-size: 0.6em;
+  transform: translate(-50%, -50%);
+}
+.addCart .shoppingCart {
+  position: absolute;
+  left: 82%;
+}
+.addCart span {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  font-size: 1em;
+  transform: translate(-50%, -50%);
+}
+.addCart span.addToCart {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  justify-content: flex-start;
+  opacity: 1;
+}
+.addCart span.addedToCart {
+  opacity: 0;
+}
+.addCart.clicked .faShoppingCart {
+  animation: cart 1.5s ease-in-out forwards;
+}
+.addCart.clicked .fa-camera {
+  animation: camera 1.5s ease-in-out forwards;
+}
+.addCart.clicked span.addToCart {
+  animation: txt1 1.5s ease-in-out forwards;
+}
+.addCart.clicked span.addedToCart {
+  animation: txt2 1.5s ease-in-out forwards;
+}
+.addCart.clicked .shoppingCart {
+  animation: firstCart 1.5s ease-in-out forwards;
+}
+
+@keyframes firstCart {
+  0% {
+    left: 82%;
+  }
+  10% {
+    left: 100%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+  40%, 60% {
+    left: 50%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+@keyframes camera {
+  0%, 40% {
+    top: -20%;
+  }
+  60% {
+    top: 38%;
+    left: 51%;
+  }
+  100% {
+    top: 38%;
+    left: 111%;
+  }
+}
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+  20%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes txt2 {
+  0%, 80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .addCart img {
+    margin: 0;
+  }
+
+  #homepage .addCart span.addToCart {
+    justify-content: center;
+    padding-left: 0px;
+  }
+  #homepage .addCart .shoppingCart {
+    display: none;
   }
 }
 
