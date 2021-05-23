@@ -41,10 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${product.description}</p>
                 <p><strong class="cardPrice">${price(product.price)}</strong></p>
                 <div class="action">
-                    <a href="product/?id=${product._id}"> 
-                        <button class="button seeMore">
+                    <a href="product/?id=${product._id}" class="button seeMore"> 
                             Voir plus
-                        </button>
                     </a>
                     <button class="button addCart">
                         <span class="addToCart">Ajouter au panier</span>

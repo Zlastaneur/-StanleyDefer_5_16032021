@@ -856,7 +856,6 @@ footer .copyright {
   display: flex;
   flex-flow: row wrap;
   padding: 20px;
-  background-color: linear gradient rgba(219, 219, 219, 0.788);
   font-size: 0.8em;
 }
 #form .duoField {
@@ -938,7 +937,7 @@ footer .copyright {
 }
 #spinner div:nth-child(3) {
   left: 56px;
-  animation-delay: 0;
+  animation-delay: 0s;
 }
 
 @keyframes spinner {
