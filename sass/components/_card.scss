@@ -1,0 +1,218 @@
+.card {
+    @include shadow;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    background-color: white;
+    margin: 10px;
+    max-height: 600px;
+
+    .cardImage {
+        max-height: 250px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cardText {
+        height: 100%;
+        max-height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+
+        h3 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+
+        p {
+            margin: 10px 0 5px 0;
+            font-size: 1.1em;
+        }
+
+        strong {
+            font-size: 1.5em;
+        }
+    }
+
+    .action {
+        display: flex;
+        justify-content: flex-start;
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+.twoCard {
+    max-width: 400px;
+    height: 600px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .smallCard {
+        width: 100%;
+        height: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+}
+
+.bigCard {
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+@include for-laptop {
+    .card {
+        max-width: 300px;
+
+        .cardImage {
+            max-height: 200px;
+        }
+
+        .cardText {
+            height: 100%;
+            max-height: 350px;
+
+            h3 {
+                font-size: 1.7em;
+            }
+        }
+
+        .action {
+            button {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .twoCard {
+        max-width: 300px;
+
+        .smallCard {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+        }
+    }
+
+    .bigCard {
+        width: 100%;
+        height: 100%;
+        max-width: 300px;
+        max-height: 550px;
+        object-fit: cover;
+    }
+}
+
+@include for-tablet {
+    .card {
+        max-width: 300px;
+        height: 550px;
+        margin-bottom: 30px;
+        margin: 10px;
+
+        .cardImage {
+            max-height: 200px;
+        }
+        .cardText {
+            padding: 10px;
+
+            h3 {
+                margin: 0 0 10px 0;
+                font-size: 1.5em;
+            }
+
+            p {
+                margin: 10px 0;
+                font-size: 1em;
+            }
+
+            strong {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    .twoCard {
+        height: 500px;
+        justify-content: space-between;
+
+        .smallCard {
+            width: 100%;
+            max-width: 300px;
+            height: 227px;
+            object-fit: cover;
+        }
+    }
+
+    .bigCard {
+        margin: 10px;
+        width: 100%;
+        max-width: 300px;
+        height: 500px;
+    }
+}
+
+@include for-phone {
+    .card {
+        width: 100%;
+        height: 550px;
+        margin: 0 0 20px 0;
+
+        .cardImage {
+            max-height: 200px;
+        }
+
+        .cardText {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+
+            h3 {
+                margin: 0 0 10px 0;
+                font-size: 1.5em;
+            }
+
+            p {
+                text-align: center;
+                margin: 10px 0;
+                font-size: 1em;
+            }
+
+            strong {
+                font-size: 1.3em;
+            }
+
+            .action {
+                justify-content: center;
+            }
+        }
+    }
+
+    .twoCard {
+        height: 500px;
+
+        .smallCard {
+            width: 100%;
+            max-width: 300px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+    }
+
+    .bigCard {
+        width: 100%;
+        height: 100%;
+        max-width: 300px;
+        max-height: 550px;
+        object-fit: cover;
+    }
+}

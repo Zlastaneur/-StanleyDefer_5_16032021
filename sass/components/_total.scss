@@ -1,0 +1,9 @@
+.totalCart {
+    @include shadow;
+    max-width: 150px;
+    width: 100%;
+    padding: 10px;
+    margin-left: auto;
+    font-weight: 600;
+    text-align: center;
+}

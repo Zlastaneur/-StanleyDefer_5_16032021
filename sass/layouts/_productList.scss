@@ -1,0 +1,134 @@
+#homepage {
+    @include pushToButtom;
+}
+
+#productList {
+    @include flex;
+    position: relative;
+    padding-top: 60px;
+    flex-direction: column;
+
+    .container {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        max-width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+}
+
+#productPage {
+    min-height: 100%;
+
+    #productList {
+        @include flex;
+        position: relative;
+        flex-direction: column;
+
+        .container {
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            max-width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@include for-laptop {
+    #productList {
+        .container {
+            justify-content: space-around;
+        }
+    }
+}
+
+@include for-tablet {
+    #productList {
+        padding: 60px 20px 0 20px;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+
+        .container {
+            max-width: 728px;
+        }
+
+        .one {
+            order: 1;
+        }
+
+        .two {
+            order: 2;
+        }
+
+        .three {
+            order: 4;
+        }
+
+        .four {
+            order: 3;
+        }
+
+        .five {
+            order: 5;
+        }
+
+        .six {
+            order: 6;
+        }
+
+        .seven {
+            order: 8;
+        }
+
+        .eight {
+            order: 9;
+            width: 728px;
+            flex-direction: row;
+            height: 500px;
+            justify-content: space-between;
+            height: auto;
+
+            .smallCard {
+                width: 100%;
+                max-width: 300px;
+                height: 227px;
+                object-fit: cover;
+            }
+        }
+
+        .twoCard {
+            margin: 10px;
+            max-width: 728px;
+        }
+
+        .nine {
+            order: 7;
+        }
+    }
+}
+
+@include for-phone {
+    #productList {
+        width: 100%;
+        padding: 30px;
+
+        .container {
+            margin: 0;
+            flex-flow: column nowrap;
+        }
+
+        .twoCard {
+            display: none;
+        }
+
+        .bigCard {
+            display: none;
+        }
+    }
+}
