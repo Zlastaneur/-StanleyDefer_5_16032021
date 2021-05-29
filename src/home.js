@@ -3,8 +3,6 @@ import { price, updateCountInfo, APIurl } from "./function.js";
 document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("homepage")) return;
 
-    const spinner = document.getElementById("spinner");
-
     updateCountInfo();
 
     // Array of images
@@ -19,12 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(`${APIurl}`)
         .then((res) => res.json())
         .then((data) => {
-            hideSpinner();
             injectHtml(data);
         })
+        .finally(hideSpinner())
         .catch((err) => console.error(err));
 
     function hideSpinner() {
+        const spinner = document.getElementById("spinner");
         spinner.remove();
     }
 

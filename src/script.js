@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         function cartClick() {
-            let button = this;
             this.classList.add("clicked");
 
             setTimeout(() => {
