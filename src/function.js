@@ -1,4 +1,4 @@
-export const APIurl = "https://orinoco-backend-p5.herokuapp.com/api/cameras";
+export const APIurl = "https://backend-production-2f1f.up.railway.app/api/cameras";
 
 // Converts price
 export function price(price) {
